@@ -1,0 +1,2147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASA FLORIST | Buket Elegan & Estetik untuk Momen Spesial</title>
+    <meta name="description" content="Buket bunga, snack, uang & custom terbaik. Desain premium untuk wisuda, anniversary, gift perusahaan. Free konsultasi & kartu ucapan.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1994/1994024.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="FASA FLORIST | Buket Premium & Estetik">
+    <meta property="og:description" content="Ciptakan momen tak terlupakan dengan buket custom dari FASA FLORIST.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://fasaflorist.com">
+    
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2D3436;
+            background-color: #FFFFFF;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #2D3436;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #D4A8A7, #8A9B7B);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #636E72;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #636E72;
+            margin-bottom: 20px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.3);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        .btn-primary {
+            background-color: #D4A8A7;
+            color: white;
+            box-shadow: 0 4px 15px rgba(212, 168, 167, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #C89594;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 168, 167, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #D4A8A7;
+            border: 2px solid #D4A8A7;
+        }
+
+        .btn-secondary:hover {
+            background-color: #F9F7F3;
+            transform: translateY(-2px);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            padding: 8px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #2D3436;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            color: #D4A8A7;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #636E72;
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #D4A8A7;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #2D3436;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            color: #636E72;
+            transition: color 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            color: #D4A8A7;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #D4A8A7;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #2D3436;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            background-color: #FFFFFF;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .founder-card {
+            background-color: #F9F7F3;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            text-align: left;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .founder-image {
+            font-size: 4rem;
+            color: #D4A8A7;
+            flex-shrink: 0;
+        }
+
+        .founder-info h3 {
+            color: #2D3436;
+            margin-bottom: 12px;
+        }
+
+        .founder-info p {
+            font-style: italic;
+            color: #636E72;
+        }
+
+        /* ===== PROCESS SECTION ===== */
+        .process {
+            background-color: #F9F7F3;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #D4A8A7;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        .step-content h3 {
+            color: #2D3436;
+            margin-bottom: 12px;
+        }
+
+        .step-content p {
+            color: #636E72;
+            font-size: 1rem;
+        }
+
+        /* ===== TARGET MARKET ===== */
+        .target-market {
+            background-color: #FFFFFF;
+        }
+
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .target-card {
+            text-align: center;
+            padding: 40px 30px;
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .target-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .target-icon {
+            font-size: 2.5rem;
+            color: #D4A8A7;
+            margin-bottom: 24px;
+        }
+
+        .target-card h3 {
+            color: #2D3436;
+            margin-bottom: 16px;
+        }
+
+        /* ===== CATALOG SECTION ===== */
+        .catalog {
+            background-color: #F9F7F3;
+        }
+
+        .catalog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 28px;
+            background-color: transparent;
+            border: 2px solid #E8D5D4;
+            color: #636E72;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: #D4A8A7;
+            border-color: #D4A8A7;
+            color: white;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-price {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #D4A8A7;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-info h3 {
+            color: #2D3436;
+            margin-bottom: 12px;
+        }
+
+        .btn-add-to-cart {
+            width: 100%;
+            margin-top: 20px;
+            padding: 14px;
+            background-color: #8A9B7B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: #7A8B6B;
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features {
+            background-color: #FFFFFF;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 40px 30px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #8A9B7B;
+            margin-bottom: 24px;
+        }
+
+        .feature-item h3 {
+            color: #2D3436;
+            margin-bottom: 16px;
+        }
+
+        /* ===== GALLERY SECTION ===== */
+        .gallery {
+            background-color: #F9F7F3;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            background-color: #FFFFFF;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: #F9F7F3;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-content {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-content p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #636E72;
+        }
+
+        .testimonial-content::before {
+            content: '"';
+            font-size: 4rem;
+            color: #D4A8A7;
+            opacity: 0.3;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background-color: #D4A8A7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            color: #2D3436;
+            margin-bottom: 4px;
+        }
+
+        .author-info span {
+            color: #636E72;
+            font-size: 0.9rem;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing {
+            background-color: #F9F7F3;
+        }
+
+        .pricing-tables {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .price-table {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .price-table h3 {
+            color: #8A9B7B;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #F9F7F3;
+        }
+
+        .price-list {
+            list-style: none;
+        }
+
+        .price-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #E8D5D4;
+        }
+
+        .price-name {
+            color: #636E72;
+        }
+
+        .price-value {
+            color: #D4A8A7;
+            font-weight: 600;
+        }
+
+        .custom-note {
+            text-align: center;
+        }
+
+        .custom-note p {
+            margin-bottom: 24px;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq {
+            background-color: #FFFFFF;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 16px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px;
+            background-color: #F9F7F3;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #2D3436;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #F0ECE4;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 24px;
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            margin-bottom: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: #2D3436;
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: #D4A8A7;
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 8px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-info i {
+            color: #D4A8A7;
+            margin-top: 4px;
+        }
+
+        .footer-cta {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* ===== FLOATING ELEMENTS ===== */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== CART SIDEBAR ===== */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #636E72;
+            cursor: pointer;
+            padding: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .close-cart:hover {
+            color: #2D3436;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px;
+        }
+
+        .cart-footer {
+            padding: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2D3436;
+        }
+
+        .checkout-btn {
+            width: 100%;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.4rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 30px;
+                gap: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .founder-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.4rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            .catalog-filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">
+                    <span class="logo-icon">🌸</span>
+                    <span class="logo-text">FASA FLORIST</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Beranda</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">Tentang</a></li>
+                    <li class="nav-item"><a href="#target" class="nav-link">Target Pasar</a></li>
+                    <li class="nav-item"><a href="#catalog" class="nav-link">Katalog</a></li>
+                    <li class="nav-item"><a href="#features" class="nav-link">Fitur</a></li>
+                    <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="#pricing" class="nav-link">Harga</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Kontak</a></li>
+                    <li class="nav-item cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </li>
+                </ul>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">FASA FLORIST</h1>
+                <p class="hero-subtitle">Buket cantik, estetik, dan dibuat dengan penuh ketelitian untuk setiap momen spesial Anda.</p>
+                <div class="hero-badges">
+                    <span class="badge"><i class="fas fa-check"></i> Custom Desain</span>
+                    <span class="badge"><i class="fas fa-check"></i> Premium Quality</span>
+                    <span class="badge"><i class="fas fa-check"></i> Free Konsultasi</span>
+                </div>
+                <div class="hero-cta">
+                    <a href="https://wa.me/6281234567890?text=Halo%20FASA%20FLORIST,%20saya%20ingin%20konsultasi%20tentang%20buket" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                    </a>
+                    <a href="#catalog" class="btn btn-secondary">Lihat Katalog</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tentang FASA FLORIST</h2>
+                <p class="section-subtitle">Kualitas premium untuk momen spesial Anda</p>
+            </div>
+            <div class="about-content">
+                <p>Kami adalah penyedia jasa pembuatan buket yang menghadirkan berbagai pilihan buket cantik, estetik, dan dibuat dengan penuh ketelitian. Mulai dari buket bunga, buket snack, hingga buket uang, semua bisa dibuat sesuai permintaan dan tema acara Anda.</p>
+                
+                <div class="founder-card">
+                    <div class="founder-image">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="founder-info">
+                        <h3>Sofi, Founder FASA FLORIST</h3>
+                        <p>"Setiap buket adalah cerita. Kami tak hanya merangkai bunga, tapi juga menghadirkan emosi dan kenangan dalam setiap karya."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cara Memesan</h2>
+                <p class="section-subtitle">Proses mudah dalam 4 langkah</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Konsultasi</h3>
+                        <p>Diskusikan kebutuhan dan ide Anda dengan tim kami</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Desain</h3>
+                        <p>Kami buatkan desain preview sesuai permintaan</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Konfirmasi</h3>
+                        <p>Setujui desain dan lakukan pembayaran DP 50%</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Pengiriman</h3>
+                        <p>Pesanan dikirim dengan pengemasan premium</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Market -->
+    <section class="section target-market" id="target">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Target Pasar Kami</h2>
+                <p class="section-subtitle">Melayani berbagai kebutuhan spesial</p>
+            </div>
+            <div class="target-grid">
+                <div class="target-card">
+                    <div class="target-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Mahasiswa</h3>
+                    <p>Buket untuk wisuda dan momen kelulusan yang spesial.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="target-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Pasangan Muda</h3>
+                    <p>Buket untuk anniversary, kasih sayang, dan momen romantis.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="target-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Orang Tua & Keluarga</h3>
+                    <p>Buket untuk ulang tahun, hadiah, dan apresiasi keluarga.</p>
+                </div>
+                
+                <div class="target-card">
+                    <div class="target-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Perusahaan</h3>
+                    <p>Gift & hampers untuk karyawan atau klien perusahaan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="section catalog" id="catalog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Katalog Buket</h2>
+                <p class="section-subtitle">Pilihan terbaik untuk berbagai kebutuhan</p>
+            </div>
+            
+            <div class="catalog-filters">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="bunga">Buket Bunga</button>
+                <button class="filter-btn" data-filter="snack">Buket Snack</button>
+                <button class="filter-btn" data-filter="uang">Buket Uang</button>
+                <button class="filter-btn" data-filter="custom">Buket Custom</button>
+            </div>
+            
+            <div class="catalog-grid">
+                <!-- Item 1: Buket Bunga -->
+                <div class="product-card" data-category="bunga">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Bunga" loading="lazy">
+                        <span class="product-price">Rp 70k</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Buket Bunga</h3>
+                        <p>Bunga segar (Mawar, Tulip, Lily), bunga artificial premium, mini buket & hand buket.</p>
+                        <button class="btn-add-to-cart" data-product="Buket Bunga Standard" data-price="70000">
+                            <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Item 2: Buket Snack -->
+                <div class="product-card" data-category="snack">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Snack" loading="lazy">
+                        <span class="product-price">Rp 45k</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Buket Snack</h3>
+                        <p>Cokelat, snack ringan, minuman dengan kemasan menarik dan estetik.</p>
+                        <button class="btn-add-to-cart" data-product="Buket Snack Medium" data-price="45000">
+                            <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Item 3: Buket Uang -->
+                <div class="product-card" data-category="uang">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Uang" loading="lazy">
+                        <span class="product-price">Rp 90k</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Buket Uang</h3>
+                        <p>Uang kertas dengan styling premium & packaging eksklusif.</p>
+                        <button class="btn-add-to-cart" data-product="Buket Uang 10 Lembar" data-price="90000">
+                            <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Item 4: Buket Custom -->
+                <div class="product-card" data-category="custom">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Custom" loading="lazy">
+                        <span class="product-price">Custom</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Buket Custom</h3>
+                        <p>Kombinasi bunga & snack, buket karakter (konsep tertentu), gift box / hampers.</p>
+                        <a href="#contact" class="btn-add-to-cart" style="background-color: #8A9B7B;">
+                            <i class="fas fa-comments"></i> Konsultasi Custom
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Fitur Layanan Kami</h2>
+                <p class="section-subtitle">Keunggulan yang kami tawarkan</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Custom Desain</h3>
+                    <p>Custom desain sesuai permintaan dan preferensi Anda.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Kartu Ucapan Gratis</h3>
+                    <p>Free kartu ucapan untuk setiap pembelian buket.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Pengemasan Premium</h3>
+                    <p>Pengemasan premium dengan material berkualitas.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-fill-drip"></i>
+                    </div>
+                    <h3>Pilihan Warna</h3>
+                    <p>Pilihan warna wrapping sesuai tema dan keinginan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Gallery Karya</h2>
+                <p class="section-subtitle">Bukti kualitas dan kreativitas kami</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Wisuda" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1567306301408-9b74779a11af?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Anniversary" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Snack" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Uang" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Testimoni Pelanggan</h2>
+                <p class="section-subtitle">Apa kata mereka tentang FASA FLORIST</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Buket uang untuk sahabat lulus cumlaude, hasilnya elegan banget! Temenku sampe nangis. Packagingnya juga rapi dan aman. Terima kasih FASA!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RS</div>
+                        <div class="author-info">
+                            <h4>Rina Septyani</h4>
+                            <span>Mahasiswa, Jakarta</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Order buket snack untuk anniversary ke-2, responnya cepat banget dan hasilnya sesuai banget dengan yang saya minta. Pacar saya suka sekali!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AF</div>
+                        <div class="author-info">
+                            <h4>Andi Fernandi</h4>
+                            <span>Karyawan, Bandung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Price List</h2>
+                <p class="section-subtitle">Harga transparan, kualitas terjamin</p>
+            </div>
+            <div class="pricing-tables">
+                <div class="price-table">
+                    <h3>Buket Bunga</h3>
+                    <ul class="price-list">
+                        <li>
+                            <span class="price-name">Standard buket</span>
+                            <span class="price-value">70k</span>
+                        </li>
+                        <li>
+                            <span class="price-name">Premium buket</span>
+                            <span class="price-value">120k–300k</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="price-table">
+                    <h3>Buket Snack</h3>
+                    <ul class="price-list">
+                        <li>
+                            <span class="price-name">Snack mini</span>
+                            <span class="price-value">25k</span>
+                        </li>
+                        <li>
+                            <span class="price-name">Snack medium</span>
+                            <span class="price-value">45k</span>
+                        </li>
+                        <li>
+                            <span class="price-name">Snack premium</span>
+                            <span class="price-value">75k–150k</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="price-table">
+                    <h3>Buket Uang</h3>
+                    <ul class="price-list">
+                        <li>
+                            <span class="price-name">5 lembar uang</span>
+                            <span class="price-value">60k</span>
+                        </li>
+                        <li>
+                            <span class="price-name">10 lembar uang</span>
+                            <span class="price-value">90k</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="price-table">
+                    <h3>Buket Custom</h3>
+                    <div class="custom-note">
+                        <p>Harga menyesuaikan dengan bahan, ukuran, dan kompleksitas desain.</p>
+                        <a href="#contact" class="btn btn-secondary">Konsultasi Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">FAQ</h2>
+                <p class="section-subtitle">Pertanyaan yang sering diajukan</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Berapa lama waktu pengerjaan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pengerjaan standar 1-2 hari. Untuk custom complex bisa 3-5 hari. Konsultasi dulu yuk!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Bisa request bunga/snack tertentu?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tentu bisa! Kami menerima request khusus untuk jenis bunga, warna, atau snack favorit Anda.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Apakah bisa kirim ke luar kota?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ya, kami melayani pengiriman ke seluruh Indonesia melalui jasa ekspedisi terpercaya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#home" class="footer-logo">
+                        <span class="logo-icon">🌸</span>
+                        <span class="logo-text">FASA FLORIST</span>
+                    </a>
+                    <p class="footer-description">Buket cantik, estetik, dan dibuat dengan penuh ketelitian untuk setiap momen spesial Anda.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#target">Target Pasar</a></li>
+                        <li><a href="#catalog">Katalog</a></li>
+                        <li><a href="#features">Fitur Layanan</a></li>
+                        <li><a href="#pricing">Harga</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Kontak</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@fasaflorist.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Bunga Indah No. 123, Kota Anda</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://wa.me/6281234567890" class="btn btn-primary footer-cta" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 FASA FLORIST. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6281234567890" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Keranjang Pesanan</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Dynamic content -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">Rp 0</span>
+            </div>
+            <a href="#" class="btn btn-primary checkout-btn" target="_blank">Checkout via WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+        // ====== MAIN INITIALIZATION ======
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all components
+            initNavigation();
+            initHeroAnimations();
+            initCatalogFilter();
+            initCartSystem();
+            initFAQAccordion();
+            initSmoothScroll();
+            initScrollEffects();
+            initCustomOrderForm();
+            
+            // Initial cart update
+            updateCartUI();
+        });
+
+        // ====== NAVIGATION SYSTEM ======
+        function initNavigation() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            const header = document.querySelector('.header');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Mobile menu toggle
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    this.innerHTML = navMenu.classList.contains('active') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
+                });
+            }
+            
+            // Close mobile menu when clicking a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                // Update active nav link
+                updateActiveNavLink();
+            });
+        }
+
+        // ====== HERO ANIMATIONS ======
+        function initHeroAnimations() {
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle) {
+                // Add subtle animation to hero elements
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(heroTitle);
+            }
+        }
+
+        // ====== CATALOG FILTER SYSTEM ======
+        function initCatalogFilter() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.dataset.filter;
+                    
+                    // Filter products
+                    productCards.forEach(card => {
+                        const category = card.dataset.category;
+                        
+                        if (filterValue === 'all' || category === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        }
+
+        // ====== CART SYSTEM ======
+        let cart = JSON.parse(localStorage.getItem('fasaCart')) || [];
+
+        function initCartSystem() {
+            const cartIcon = document.querySelector('.cart-icon');
+            const cartSidebar = document.querySelector('.cart-sidebar');
+            const closeCartBtn = document.querySelector('.close-cart');
+            const addToCartBtns = document.querySelectorAll('.btn-add-to-cart');
+            
+            // Cart sidebar toggle
+            if (cartIcon && cartSidebar) {
+                cartIcon.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    cartSidebar.classList.add('active');
+                    updateCartUI();
+                });
+            }
+            
+            // Close cart
+            if (closeCartBtn && cartSidebar) {
+                closeCartBtn.addEventListener('click', () => {
+                    cartSidebar.classList.remove('active');
+                });
+            }
+            
+            // Close cart when clicking outside
+            document.addEventListener('click', (e) => {
+                if (cartSidebar && cartSidebar.classList.contains('active') && 
+                    !cartSidebar.contains(e.target) && 
+                    !e.target.closest('.cart-icon')) {
+                    cartSidebar.classList.remove('active');
+                }
+            });
+            
+            // Add to cart functionality
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if (this.hasAttribute('href')) return; // Skip for links
+                    
+                    const product = this.dataset.product;
+                    const price = parseInt(this.dataset.price);
+                    
+                    addToCart(product, price);
+                    showNotification(`"${product}" ditambahkan ke keranjang!`);
+                });
+            });
+        }
+
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            saveCart();
+            updateCartUI();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            saveCart();
+            updateCartUI();
+        }
+
+        function saveCart() {
+            localStorage.setItem('fasaCart', JSON.stringify(cart));
+        }
+
+        function updateCartUI() {
+            const cartCount = document.querySelector('.cart-count');
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cartTotal = document.querySelector('.total-amount');
+            const checkoutBtn = document.querySelector('.checkout-btn');
+            
+            // Update cart count
+            if (cartCount) {
+                cartCount.textContent = cart.length;
+            }
+            
+            // Update cart items display
+            if (cartItemsContainer) {
+                cartItemsContainer.innerHTML = '';
+                
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Keranjang masih kosong</p>
+                        </div>
+                    `;
+                    
+                    // Add styles for empty cart
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        .empty-cart {
+                            text-align: center;
+                            padding: 60px 20px;
+                            color: #636E72;
+                        }
+                        .empty-cart i {
+                            font-size: 3rem;
+                            margin-bottom: 20px;
+                            color: #E8D5D4;
+                        }
+                    `;
+                    document.head.appendChild(style);
+                } else {
+                    let total = 0;
+                    
+                    cart.forEach((item, index) => {
+                        total += item.price;
+                        
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item';
+                        cartItem.innerHTML = `
+                            <div class="cart-item-details">
+                                <h4>${item.product}</h4>
+                                <p>Rp ${item.price.toLocaleString()}</p>
+                            </div>
+                            <button class="remove-item" data-index="${index}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        `;
+                        cartItemsContainer.appendChild(cartItem);
+                    });
+                    
+                    // Update total
+                    if (cartTotal) {
+                        cartTotal.textContent = `Rp ${total.toLocaleString()}`;
+                    }
+                    
+                    // Update checkout button
+                    if (checkoutBtn) {
+                        let message = `Halo FASA FLORIST, saya ingin order:\n\n`;
+                        cart.forEach(item => {
+                            message += `- ${item.product}: Rp ${item.price.toLocaleString()}\n`;
+                        });
+                        message += `\nTotal: Rp ${total.toLocaleString()}\n\nBisa dikonsultasikan lebih lanjut?`;
+                        const encodedMessage = encodeURIComponent(message);
+                        checkoutBtn.href = `https://wa.me/6281234567890?text=${encodedMessage}`;
+                    }
+                    
+                    // Add event listeners to remove buttons
+                    document.querySelectorAll('.remove-item').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const index = parseInt(this.dataset.index);
+                            removeFromCart(index);
+                            showNotification('Item dihapus dari keranjang');
+                        });
+                    });
+                }
+            }
+        }
+
+        // ====== FAQ ACCORDION ======
+        function initFAQAccordion() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        }
+
+        // ====== SMOOTH SCROLL ======
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href === '#' || href === '#home') {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                        return;
+                    }
+                    
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // ====== SCROLL EFFECTS ======
+        function initScrollEffects() {
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements
+            document.querySelectorAll('.target-card, .product-card, .feature-item, .testimonial-card, .gallery-item').forEach(el => {
+                el.classList.add('fade-up');
+                observer.observe(el);
+            });
+            
+            // Add CSS for animations
+            const animationStyles = document.createElement('style');
+            animationStyles.textContent = `
+                .fade-up {
+                    opacity: 0;
+                    transform: translateY(40px);
+                    transition: opacity 0.6s ease, transform 0.6s ease;
+                }
+                
+                .animate-in {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                
+                @keyframes fadeUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `;
+            document.head.appendChild(animationStyles);
+        }
+
+        // ====== CUSTOM ORDER FORM ======
+        function initCustomOrderForm() {
+            // Since we don't have a custom order form in the current HTML structure,
+            // we'll create a simple version for demonstration
+            const contactForm = document.querySelector('.footer-cta');
+            
+            if (contactForm) {
+                contactForm.addEventListener('click', function(e) {
+                    // Simple WhatsApp message for now
+                    const message = `Halo FASA FLORIST, saya ingin konsultasi tentang buket custom.`;
+                    const encodedMessage = encodeURIComponent(message);
+                    this.href = `https://wa.me/6281234567890?text=${encodedMessage}`;
+                });
+            }
+        }
+
+        // ====== ACTIVE NAV LINK UPDATE ======
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            const scrollPos = window.pageYOffset + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // ====== NOTIFICATION SYSTEM ======
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            
+            // Add styles
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background-color: #8A9B7B;
+                color: white;
+                padding: 16px 24px;
+                border-radius: 8px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+                z-index: 10000;
+                transform: translateX(400px);
+                transition: transform 0.3s ease;
+                max-width: 350px;
+                font-weight: 500;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // Animate out and remove
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // ====== PERFORMANCE OPTIMIZATION ======
+        // Debounce function for scroll events
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Throttle function for resize events
+        function throttle(func, limit) {
+            let inThrottle;
+            return function() {
+                const args = arguments;
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            };
+        }
+
+        // Optimize scroll events
+        window.addEventListener('scroll', throttle(updateActiveNavLink, 100));
+    </script>
+</body>
+</html>
