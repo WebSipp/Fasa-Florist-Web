@@ -454,15 +454,90 @@
             font-size: 1rem;
         }
 
+        /* ===== CAROUSEL STYLES ===== */
+        .carousel-container {
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 30px;
+            padding: 10px 0;
+        }
+
+        .carousel-item {
+            flex: 0 0 calc(100% / 4 - 30px);
+            min-width: 0;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            font-size: 1.2rem;
+            color: #D4A8A7;
+            cursor: pointer;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background-color: #D4A8A7;
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn-prev {
+            left: -25px;
+        }
+
+        .carousel-btn-next {
+            right: -25px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #E8D5D4;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        .carousel-dot.active {
+            background-color: #D4A8A7;
+            transform: scale(1.2);
+        }
+
         /* ===== TARGET MARKET ===== */
         .target-market {
             background-color: #FFFFFF;
-        }
-
-        .target-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
         }
 
         .target-card {
@@ -473,6 +548,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(0, 0, 0, 0.03);
+            height: 100%;
         }
 
         .target-card:hover {
@@ -522,18 +598,13 @@
             color: white;
         }
 
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
         .product-card {
             background-color: #FFFFFF;
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
         }
 
         .product-card:hover {
@@ -606,15 +677,20 @@
             background-color: #FFFFFF;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-        }
-
         .feature-item {
             text-align: center;
             padding: 40px 30px;
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
         }
 
         .feature-icon {
@@ -631,12 +707,6 @@
         /* ===== GALLERY SECTION ===== */
         .gallery {
             background-color: #F9F7F3;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
         }
 
         .gallery-item {
@@ -730,17 +800,12 @@
             background-color: #F9F7F3;
         }
 
-        .pricing-tables {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
         .price-table {
             background-color: #FFFFFF;
             border-radius: 16px;
             padding: 40px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            height: 100%;
         }
 
         .price-table h3 {
@@ -1038,6 +1103,12 @@
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            .carousel-item {
+                flex: 0 0 calc(100% / 3 - 30px);
+            }
+        }
+
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 3.2rem;
@@ -1049,6 +1120,14 @@
             
             .section {
                 padding: 60px 0;
+            }
+            
+            .carousel-item {
+                flex: 0 0 calc(100% / 2 - 30px);
+            }
+            
+            .carousel-btn {
+                display: none;
             }
         }
 
@@ -1105,6 +1184,10 @@
                 width: 100%;
                 right: -100%;
             }
+            
+            .carousel-item {
+                flex: 0 0 calc(100% - 30px);
+            }
         }
 
         @media (max-width: 576px) {
@@ -1131,6 +1214,10 @@
             
             .filter-btn {
                 text-align: center;
+            }
+            
+            .carousel-item {
+                flex: 0 0 100%;
             }
         }
     </style>
@@ -1259,38 +1346,57 @@
                 <h2 class="section-title">Target Pasar Kami</h2>
                 <p class="section-subtitle">Melayani berbagai kebutuhan spesial</p>
             </div>
-            <div class="target-grid">
-                <div class="target-card">
-                    <div class="target-icon">
-                        <i class="fas fa-graduation-cap"></i>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="targetCarousel">
+                        <div class="carousel-item">
+                            <div class="target-card">
+                                <div class="target-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3>Mahasiswa</h3>
+                                <p>Buket untuk wisuda dan momen kelulusan yang spesial.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <div class="target-card">
+                                <div class="target-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h3>Pasangan Muda</h3>
+                                <p>Buket untuk anniversary, kasih sayang, dan momen romantis.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <div class="target-card">
+                                <div class="target-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <h3>Orang Tua & Keluarga</h3>
+                                <p>Buket untuk ulang tahun, hadiah, dan apresiasi keluarga.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <div class="target-card">
+                                <div class="target-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <h3>Perusahaan</h3>
+                                <p>Gift & hampers untuk karyawan atau klien perusahaan.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Mahasiswa</h3>
-                    <p>Buket untuk wisuda dan momen kelulusan yang spesial.</p>
                 </div>
-                
-                <div class="target-card">
-                    <div class="target-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Pasangan Muda</h3>
-                    <p>Buket untuk anniversary, kasih sayang, dan momen romantis.</p>
-                </div>
-                
-                <div class="target-card">
-                    <div class="target-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Orang Tua & Keluarga</h3>
-                    <p>Buket untuk ulang tahun, hadiah, dan apresiasi keluarga.</p>
-                </div>
-                
-                <div class="target-card">
-                    <div class="target-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Perusahaan</h3>
-                    <p>Gift & hampers untuk karyawan atau klien perusahaan.</p>
-                </div>
+                <button class="carousel-btn carousel-btn-prev" data-carousel="target">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-btn-next" data-carousel="target">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-dots" id="targetDots"></div>
             </div>
         </div>
     </section>
@@ -1311,66 +1417,85 @@
                 <button class="filter-btn" data-filter="custom">Buket Custom</button>
             </div>
             
-            <div class="catalog-grid">
-                <!-- Item 1: Buket Bunga -->
-                <div class="product-card" data-category="bunga">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Bunga" loading="lazy">
-                        <span class="product-price">Rp 70k</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Buket Bunga</h3>
-                        <p>Bunga segar (Mawar, Tulip, Lily), bunga artificial premium, mini buket & hand buket.</p>
-                        <button class="btn-add-to-cart" data-product="Buket Bunga Standard" data-price="70000">
-                            <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
-                        </button>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="catalogCarousel">
+                        <!-- Item 1: Buket Bunga -->
+                        <div class="carousel-item" data-category="bunga">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Bunga" loading="lazy">
+                                    <span class="product-price">Rp 70k</span>
+                                </div>
+                                <div class="product-info">
+                                    <h3>Buket Bunga</h3>
+                                    <p>Bunga segar (Mawar, Tulip, Lily), bunga artificial premium, mini buket & hand buket.</p>
+                                    <button class="btn-add-to-cart" data-product="Buket Bunga Standard" data-price="70000">
+                                        <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2: Buket Snack -->
+                        <div class="carousel-item" data-category="snack">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Snack" loading="lazy">
+                                    <span class="product-price">Rp 45k</span>
+                                </div>
+                                <div class="product-info">
+                                    <h3>Buket Snack</h3>
+                                    <p>Cokelat, snack ringan, minuman dengan kemasan menarik dan estetik.</p>
+                                    <button class="btn-add-to-cart" data-product="Buket Snack Medium" data-price="45000">
+                                        <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3: Buket Uang -->
+                        <div class="carousel-item" data-category="uang">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Uang" loading="lazy">
+                                    <span class="product-price">Rp 90k</span>
+                                </div>
+                                <div class="product-info">
+                                    <h3>Buket Uang</h3>
+                                    <p>Uang kertas dengan styling premium & packaging eksklusif.</p>
+                                    <button class="btn-add-to-cart" data-product="Buket Uang 10 Lembar" data-price="90000">
+                                        <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 4: Buket Custom -->
+                        <div class="carousel-item" data-category="custom">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Custom" loading="lazy">
+                                    <span class="product-price">Custom</span>
+                                </div>
+                                <div class="product-info">
+                                    <h3>Buket Custom</h3>
+                                    <p>Kombinasi bunga & snack, buket karakter (konsep tertentu), gift box / hampers.</p>
+                                    <a href="#contact" class="btn-add-to-cart" style="background-color: #8A9B7B;">
+                                        <i class="fas fa-comments"></i> Konsultasi Custom
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Item 2: Buket Snack -->
-                <div class="product-card" data-category="snack">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Snack" loading="lazy">
-                        <span class="product-price">Rp 45k</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Buket Snack</h3>
-                        <p>Cokelat, snack ringan, minuman dengan kemasan menarik dan estetik.</p>
-                        <button class="btn-add-to-cart" data-product="Buket Snack Medium" data-price="45000">
-                            <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Item 3: Buket Uang -->
-                <div class="product-card" data-category="uang">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Uang" loading="lazy">
-                        <span class="product-price">Rp 90k</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Buket Uang</h3>
-                        <p>Uang kertas dengan styling premium & packaging eksklusif.</p>
-                        <button class="btn-add-to-cart" data-product="Buket Uang 10 Lembar" data-price="90000">
-                            <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Item 4: Buket Custom -->
-                <div class="product-card" data-category="custom">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Custom" loading="lazy">
-                        <span class="product-price">Custom</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Buket Custom</h3>
-                        <p>Kombinasi bunga & snack, buket karakter (konsep tertentu), gift box / hampers.</p>
-                        <a href="#contact" class="btn-add-to-cart" style="background-color: #8A9B7B;">
-                            <i class="fas fa-comments"></i> Konsultasi Custom
-                        </a>
-                    </div>
-                </div>
+                <button class="carousel-btn carousel-btn-prev" data-carousel="catalog">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-btn-next" data-carousel="catalog">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-dots" id="catalogDots"></div>
             </div>
         </div>
     </section>
@@ -1382,38 +1507,57 @@
                 <h2 class="section-title">Fitur Layanan Kami</h2>
                 <p class="section-subtitle">Keunggulan yang kami tawarkan</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-palette"></i>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="featuresCarousel">
+                        <div class="carousel-item">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h3>Custom Desain</h3>
+                                <p>Custom desain sesuai permintaan dan preferensi Anda.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-gift"></i>
+                                </div>
+                                <h3>Kartu Ucapan Gratis</h3>
+                                <p>Free kartu ucapan untuk setiap pembelian buket.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-box-open"></i>
+                                </div>
+                                <h3>Pengemasan Premium</h3>
+                                <p>Pengemasan premium dengan material berkualitas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-fill-drip"></i>
+                                </div>
+                                <h3>Pilihan Warna</h3>
+                                <p>Pilihan warna wrapping sesuai tema dan keinginan.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Custom Desain</h3>
-                    <p>Custom desain sesuai permintaan dan preferensi Anda.</p>
                 </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <h3>Kartu Ucapan Gratis</h3>
-                    <p>Free kartu ucapan untuk setiap pembelian buket.</p>
-                </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-box-open"></i>
-                    </div>
-                    <h3>Pengemasan Premium</h3>
-                    <p>Pengemasan premium dengan material berkualitas.</p>
-                </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-fill-drip"></i>
-                    </div>
-                    <h3>Pilihan Warna</h3>
-                    <p>Pilihan warna wrapping sesuai tema dan keinginan.</p>
-                </div>
+                <button class="carousel-btn carousel-btn-prev" data-carousel="features">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-btn-next" data-carousel="features">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-dots" id="featuresDots"></div>
             </div>
         </div>
     </section>
@@ -1425,19 +1569,38 @@
                 <h2 class="section-title">Gallery Karya</h2>
                 <p class="section-subtitle">Bukti kualitas dan kreativitas kami</p>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Wisuda" loading="lazy">
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="galleryCarousel">
+                        <div class="carousel-item">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Wisuda" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1567306301408-9b74779a11af?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Anniversary" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Snack" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Uang" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1567306301408-9b74779a11af?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Anniversary" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Snack" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Buket Uang" loading="lazy">
-                </div>
+                <button class="carousel-btn carousel-btn-prev" data-carousel="gallery">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-btn-next" data-carousel="gallery">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-dots" id="galleryDots"></div>
             </div>
         </div>
     </section>
@@ -1486,60 +1649,79 @@
                 <h2 class="section-title">Price List</h2>
                 <p class="section-subtitle">Harga transparan, kualitas terjamin</p>
             </div>
-            <div class="pricing-tables">
-                <div class="price-table">
-                    <h3>Buket Bunga</h3>
-                    <ul class="price-list">
-                        <li>
-                            <span class="price-name">Standard buket</span>
-                            <span class="price-value">70k</span>
-                        </li>
-                        <li>
-                            <span class="price-name">Premium buket</span>
-                            <span class="price-value">120k–300k</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="price-table">
-                    <h3>Buket Snack</h3>
-                    <ul class="price-list">
-                        <li>
-                            <span class="price-name">Snack mini</span>
-                            <span class="price-value">25k</span>
-                        </li>
-                        <li>
-                            <span class="price-name">Snack medium</span>
-                            <span class="price-value">45k</span>
-                        </li>
-                        <li>
-                            <span class="price-name">Snack premium</span>
-                            <span class="price-value">75k–150k</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="price-table">
-                    <h3>Buket Uang</h3>
-                    <ul class="price-list">
-                        <li>
-                            <span class="price-name">5 lembar uang</span>
-                            <span class="price-value">60k</span>
-                        </li>
-                        <li>
-                            <span class="price-name">10 lembar uang</span>
-                            <span class="price-value">90k</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="price-table">
-                    <h3>Buket Custom</h3>
-                    <div class="custom-note">
-                        <p>Harga menyesuaikan dengan bahan, ukuran, dan kompleksitas desain.</p>
-                        <a href="#contact" class="btn btn-secondary">Konsultasi Sekarang</a>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="pricingCarousel">
+                        <div class="carousel-item">
+                            <div class="price-table">
+                                <h3>Buket Bunga</h3>
+                                <ul class="price-list">
+                                    <li>
+                                        <span class="price-name">Standard buket</span>
+                                        <span class="price-value">70k</span>
+                                    </li>
+                                    <li>
+                                        <span class="price-name">Premium buket</span>
+                                        <span class="price-value">120k–300k</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <div class="price-table">
+                                <h3>Buket Snack</h3>
+                                <ul class="price-list">
+                                    <li>
+                                        <span class="price-name">Snack mini</span>
+                                        <span class="price-value">25k</span>
+                                    </li>
+                                    <li>
+                                        <span class="price-name">Snack medium</span>
+                                        <span class="price-value">45k</span>
+                                    </li>
+                                    <li>
+                                        <span class="price-name">Snack premium</span>
+                                        <span class="price-value">75k–150k</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <div class="price-table">
+                                <h3>Buket Uang</h3>
+                                <ul class="price-list">
+                                    <li>
+                                        <span class="price-name">5 lembar uang</span>
+                                        <span class="price-value">60k</span>
+                                    </li>
+                                    <li>
+                                        <span class="price-name">10 lembar uang</span>
+                                        <span class="price-value">90k</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <div class="price-table">
+                                <h3>Buket Custom</h3>
+                                <div class="custom-note">
+                                    <p>Harga menyesuaikan dengan bahan, ukuran, dan kompleksitas desain.</p>
+                                    <a href="#contact" class="btn btn-secondary">Konsultasi Sekarang</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <button class="carousel-btn carousel-btn-prev" data-carousel="pricing">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-btn-next" data-carousel="pricing">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-dots" id="pricingDots"></div>
             </div>
         </div>
     </section>
@@ -1680,10 +1862,185 @@
             initSmoothScroll();
             initScrollEffects();
             initCustomOrderForm();
+            initCarousels();
             
             // Initial cart update
             updateCartUI();
         });
+
+        // ====== CAROUSEL SYSTEM ======
+        function initCarousels() {
+            // Define carousel configurations
+            const carousels = [
+                { id: 'target', itemsPerView: { desktop: 4, tablet: 3, mobile: 2, smallMobile: 1 } },
+                { id: 'catalog', itemsPerView: { desktop: 4, tablet: 3, mobile: 2, smallMobile: 1 } },
+                { id: 'features', itemsPerView: { desktop: 4, tablet: 3, mobile: 2, smallMobile: 1 } },
+                { id: 'gallery', itemsPerView: { desktop: 4, tablet: 3, mobile: 2, smallMobile: 1 } },
+                { id: 'pricing', itemsPerView: { desktop: 4, tablet: 3, mobile: 2, smallMobile: 1 } }
+            ];
+
+            // Initialize each carousel
+            carousels.forEach(carouselConfig => {
+                const carouselId = carouselConfig.id;
+                const track = document.getElementById(`${carouselId}Carousel`);
+                const prevBtn = document.querySelector(`[data-carousel="${carouselId}"].carousel-btn-prev`);
+                const nextBtn = document.querySelector(`[data-carousel="${carouselId}"].carousel-btn-next`);
+                const dotsContainer = document.getElementById(`${carouselId}Dots`);
+                
+                if (track) {
+                    const items = track.querySelectorAll('.carousel-item');
+                    const itemCount = items.length;
+                    
+                    // Calculate initial items per view based on screen width
+                    let currentIndex = 0;
+                    let itemsPerView = calculateItemsPerView(carouselConfig.itemsPerView);
+                    let totalSlides = Math.ceil(itemCount / itemsPerView) - 1;
+                    
+                    // Create dots
+                    createDots(dotsContainer, totalSlides + 1, carouselId);
+                    
+                    // Initial position
+                    updateCarouselPosition(carouselId, currentIndex);
+                    
+                    // Previous button click
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', () => {
+                            currentIndex = Math.max(currentIndex - 1, 0);
+                            updateCarouselPosition(carouselId, currentIndex);
+                            updateActiveDot(carouselId, currentIndex);
+                        });
+                    }
+                    
+                    // Next button click
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', () => {
+                            currentIndex = Math.min(currentIndex + 1, totalSlides);
+                            updateCarouselPosition(carouselId, currentIndex);
+                            updateActiveDot(carouselId, currentIndex);
+                        });
+                    }
+                    
+                    // Dot click
+                    if (dotsContainer) {
+                        dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                            dot.addEventListener('click', () => {
+                                currentIndex = index;
+                                updateCarouselPosition(carouselId, currentIndex);
+                                updateActiveDot(carouselId, currentIndex);
+                            });
+                        });
+                    }
+                    
+                    // Update on window resize
+                    window.addEventListener('resize', throttle(() => {
+                        itemsPerView = calculateItemsPerView(carouselConfig.itemsPerView);
+                        totalSlides = Math.ceil(itemCount / itemsPerView) - 1;
+                        
+                        // Recreate dots if needed
+                        createDots(dotsContainer, totalSlides + 1, carouselId);
+                        
+                        // Update active dot
+                        updateActiveDot(carouselId, currentIndex);
+                        
+                        // Update position
+                        updateCarouselPosition(carouselId, currentIndex);
+                    }, 250));
+                    
+                    // Touch/swipe support for mobile
+                    let touchStartX = 0;
+                    let touchEndX = 0;
+                    
+                    track.addEventListener('touchstart', (e) => {
+                        touchStartX = e.changedTouches[0].screenX;
+                    });
+                    
+                    track.addEventListener('touchend', (e) => {
+                        touchEndX = e.changedTouches[0].screenX;
+                        handleSwipe();
+                    });
+                    
+                    function handleSwipe() {
+                        const swipeThreshold = 50;
+                        const diff = touchStartX - touchEndX;
+                        
+                        if (Math.abs(diff) > swipeThreshold) {
+                            if (diff > 0 && currentIndex < totalSlides) {
+                                // Swipe left
+                                currentIndex++;
+                                updateCarouselPosition(carouselId, currentIndex);
+                                updateActiveDot(carouselId, currentIndex);
+                            } else if (diff < 0 && currentIndex > 0) {
+                                // Swipe right
+                                currentIndex--;
+                                updateCarouselPosition(carouselId, currentIndex);
+                                updateActiveDot(carouselId, currentIndex);
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function calculateItemsPerView(itemsPerViewConfig) {
+            const width = window.innerWidth;
+            
+            if (width >= 1200) {
+                return itemsPerViewConfig.desktop || 4;
+            } else if (width >= 992) {
+                return itemsPerViewConfig.tablet || 3;
+            } else if (width >= 768) {
+                return itemsPerViewConfig.mobile || 2;
+            } else {
+                return itemsPerViewConfig.smallMobile || 1;
+            }
+        }
+
+        function updateCarouselPosition(carouselId, index) {
+            const track = document.getElementById(`${carouselId}Carousel`);
+            if (!track) return;
+            
+            const items = track.querySelectorAll('.carousel-item');
+            const itemWidth = items[0] ? items[0].offsetWidth + 30 : 0; // Include gap
+            
+            track.style.transform = `translateX(-${index * itemWidth}px)`;
+        }
+
+        function createDots(container, count, carouselId) {
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            for (let i = 0; i < count; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.setAttribute('data-slide', i);
+                dot.setAttribute('data-carousel', carouselId);
+                container.appendChild(dot);
+                
+                // Add click event
+                dot.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    updateActiveDot(carouselId, slideIndex);
+                    
+                    // Update carousel position
+                    updateCarouselPosition(carouselId, slideIndex);
+                });
+            }
+        }
+
+        function updateActiveDot(carouselId, activeIndex) {
+            const dotsContainer = document.getElementById(`${carouselId}Dots`);
+            if (!dotsContainer) return;
+            
+            dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                if (index === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
 
         // ====== NAVIGATION SYSTEM ======
         function initNavigation() {
@@ -1745,7 +2102,8 @@
         // ====== CATALOG FILTER SYSTEM ======
         function initCatalogFilter() {
             const filterBtns = document.querySelectorAll('.filter-btn');
-            const productCards = document.querySelectorAll('.product-card');
+            const productCards = document.querySelectorAll('.carousel-item[data-category]');
+            const catalogCarousel = document.getElementById('catalogCarousel');
             
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
@@ -1757,12 +2115,14 @@
                     
                     const filterValue = this.dataset.filter;
                     
-                    // Filter products
+                    // Show/hide products based on filter
+                    let visibleItems = 0;
                     productCards.forEach(card => {
                         const category = card.dataset.category;
                         
                         if (filterValue === 'all' || category === filterValue) {
                             card.style.display = 'block';
+                            visibleItems++;
                             setTimeout(() => {
                                 card.style.opacity = '1';
                                 card.style.transform = 'translateY(0)';
@@ -1775,6 +2135,15 @@
                             }, 300);
                         }
                     });
+                    
+                    // Update dots based on visible items
+                    if (catalogCarousel) {
+                        const itemsPerView = calculateItemsPerView({ desktop: 4, tablet: 3, mobile: 2, smallMobile: 1 });
+                        const totalSlides = Math.ceil(visibleItems / itemsPerView);
+                        const dotsContainer = document.getElementById('catalogDots');
+                        
+                        createDots(dotsContainer, totalSlides, 'catalog');
+                    }
                 });
             });
         }
